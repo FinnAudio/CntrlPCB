@@ -42,6 +42,15 @@ eagle.epf
 # file locks introduced since 7.x
 *.lck
 
+# Gerber files
+*.GBL
+*.GBO
+*.GBS
+*.GTL
+*.GTO
+*.GTS
+*.TXT
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
