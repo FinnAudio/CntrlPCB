@@ -913,12 +913,12 @@ Standard 8.5x11 US Letter frame</description>
 <part name="GND4" library="Finn-lbr-rev1" deviceset="GND" device=""/>
 <part name="JP7" library="Finn-lbr-rev1" deviceset="M02" device="PTH3"/>
 <part name="GND" library="Finn-lbr-rev1" deviceset="GND" device=""/>
-<part name="JP8" library="Finn-lbr-rev1" deviceset="M03" device="LONGPADS"/>
 <part name="JP9" library="Finn-lbr-rev1" deviceset="M03" device="LONGPADS"/>
 <part name="JP10" library="Finn-lbr-rev1" deviceset="M02" device="PTH3"/>
 <part name="GND7" library="Finn-lbr-rev1" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="Finn-lbr-rev1" deviceset="VCC" device=""/>
 <part name="FRAME1" library="Finn-lbr-rev1" deviceset="FRAME-LETTER" device=""/>
+<part name="JP8" library="Finn-lbr-rev1" deviceset="M02" device="PTH3"/>
 </parts>
 <sheets>
 <sheet>
@@ -947,13 +947,13 @@ Standard 8.5x11 US Letter frame</description>
 <instance part="GND4" gate="1" x="139.7" y="116.84"/>
 <instance part="JP7" gate="G$1" x="96.52" y="-5.08"/>
 <instance part="GND" gate="1" x="109.22" y="-12.7"/>
-<instance part="JP8" gate="G$1" x="165.1" y="58.42" rot="R180"/>
 <instance part="JP9" gate="G$1" x="223.52" y="5.08"/>
 <instance part="JP10" gate="G$1" x="259.08" y="5.08" rot="R180"/>
 <instance part="GND7" gate="1" x="236.22" y="-7.62"/>
 <instance part="SUPPLY5" gate="G$1" x="238.76" y="15.24"/>
 <instance part="FRAME1" gate="G$1" x="68.58" y="-45.72"/>
 <instance part="FRAME1" gate="G$2" x="215.9" y="-45.72"/>
+<instance part="JP8" gate="G$1" x="167.64" y="58.42" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -1096,10 +1096,6 @@ Standard 8.5x11 US Letter frame</description>
 </segment>
 </net>
 <net name="PB6" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="PWREN"/>
-<wire x1="185.42" y1="116.84" x2="193.04" y2="116.84" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
 <wire x1="93.98" y1="66.04" x2="81.28" y2="66.04" width="0.1524" layer="91"/>
@@ -1285,22 +1281,13 @@ Standard 8.5x11 US Letter frame</description>
 <wire x1="251.46" y1="132.08" x2="264.16" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$17" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
-<pinref part="JP8" gate="G$1" pin="1"/>
-<wire x1="142.24" y1="63.5" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="63.5" x2="157.48" y2="60.96" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$18" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PD3(INT1)"/>
 <wire x1="142.24" y1="60.96" x2="154.94" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="60.96" x2="154.94" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="58.42" x2="157.48" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="JP8" gate="G$1" pin="2"/>
-<wire x1="160.02" y1="58.42" x2="157.48" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="58.42" x2="154.94" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="JP8" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -1308,8 +1295,8 @@ Standard 8.5x11 US Letter frame</description>
 <pinref part="U1" gate="G$1" pin="PD4(XCK/T0)"/>
 <wire x1="142.24" y1="58.42" x2="152.4" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="58.42" x2="152.4" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="JP8" gate="G$1" pin="3"/>
-<wire x1="152.4" y1="55.88" x2="157.48" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="55.88" x2="160.02" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="JP8" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$20" class="0">
@@ -1320,6 +1307,17 @@ Standard 8.5x11 US Letter frame</description>
 <pinref part="JP9" gate="G$1" pin="3"/>
 <wire x1="246.38" y1="10.16" x2="231.14" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="10.16" x2="231.14" y2="7.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PWREN" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PWREN"/>
+<wire x1="193.04" y1="116.84" x2="185.42" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
+<wire x1="142.24" y1="63.5" x2="157.48" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="63.5" x2="157.48" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
